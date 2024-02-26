@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronóstico Meteorológico</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="icons/Weather.png">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-straight/css/uicons-solid-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-straight/css/uicons-thin-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="fondo-video">
+        </video>
+    </div>
+
+    <div class="contenedor">
+        <div class="sidebar">
+            <div>
+                <form action="" class="buscar" id="buscar">
+                    <input type="text" id="query" placeholder="Ciudad">
+                    <button class="busca-btn"><i class="fi fi-rr-search"></i></button>
+                </form>
+            </div>
+            <div class="icono-clima">
+                <img src="icons/sun/27.png" alt="" id="icono">
+            </div>
+            <div class="temperatura">
+                <h1 id="temp">0</h1>
+                <span id="unidad-temp">ºC</span>
+            </div>
+            <div class="fecha-temp">
+                <p id="fecha-temp">
+                    Lunes, 12:00
+                </p>
+            </div>
+            <div class="linea"></div>
+
+            <div class="condicion-clima">
+                <div class="condicion">
+                    <i class="fi fi-ss-cloud"></i>
+                    <div id="condicion">Condición</div>
+                </div>
+                <div class="lluvia">
+                    <i class="fi fi-ss-cloud-hail-mixed"></i>
+                    <p id="lluvia">0%</p>
+                </div>
+            </div>
+
+            <div class="ubicacion">
+                <div class="ubicacion-icon">
+                    <i class="fi fi-ss-marker"></i>
+                </div>
+                <div class="ubi-text">
+                    <p id="ubicacion">Ubicación</p> 
+                </div>
+            </div>
+        </div>
+
+        <div class="pronostico">
+            <nav>
+                <ul class="opciones">
+                    <button class="horas active">hoy</button>
+                    <button class="semana">semana</button>
+                </ul>
+            </nav>
+            <div class="cards" id="cards-tiempo">
+                
+            </div>
+            <div class="detalles">
+                <h2 class="cabecera">Detalles del tiempo</h2>
+                <div class="cards2">
+                    <div class="card-detalle">
+                        <h4 class="card-cabecera">UV</h4>
+                        <div class="content">
+                            <div class="icono">
+                                <i class="fi fi-rr-brightness"></i>
+                            </div>
+                            <p class="uv-index">0</p>
+                            <p class="uv-text">muy débil</p>
+                        </div>
+                    </div>
+                    <div class="card-detalle">
+                        <h4 class="card-cabecera">Sensación térmica</h4>
+                        <div class="content">
+                            <div class="icono">
+                                <i class="fi fi-rr-temperature-high"></i>
+                            </div>
+                            <p class="sens-termica">0</p>
+                            <p class="sens-text">ºC</p>
+                        </div>
+                    </div>
+                    <div class="card-detalle">
+                        <h4 class="card-cabecera">Viento</h4>
+                        <div class="content">
+                            <div class="icono">
+                                <i class="fi fi-rr-wind"></i>
+                            </div>
+                            <p class="viento">0</p>
+                            <p class="viento-text">km/h</p>
+                        </div>
+                    </div>
+                    <div class="card-detalle">
+                        <h4 class="card-cabecera">Humedad</h4>
+                        <div class="content">
+                            <div class="icono">
+                                <i class="fi fi-rr-humidity"></i>
+                            </div>
+                            <p class="humedad">0</p>
+                            <p class="hum-text">%</p>
+                        </div>
+                    </div>
+                    <div class="card-detalle">
+                        <h4 class="card-cabecera" id="sunRiseSet">Amanecer</h4>
+                        <div class="content">
+                            <div class="icono">
+                                <i class="fi fi-rs-sunrise-alt"></i>
+                            </div>
+                            <p class="visibilidad" id="horaSunRise">00:00</p>
+                            <p class="vis-text" id="horaSunSet">Atardecer 17:00</p>
+                        </div>
+                    </div>
+                    <div class="card-detalle">
+                        <h4 class="card-cabecera">Presión atmosférica</h4>
+                        <div class="content">
+                            <div class="icono">
+                                <i class="fi fi-rr-rainbow"></i>
+                            </div>
+                            <p class="presion-atmos">0</p>
+                            <p class="presion-text">hpa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
